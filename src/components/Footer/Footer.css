@@ -1,0 +1,52 @@
+.Footer {
+  z-index: 1;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+  width: 100vw;
+  margin-top: 10px;
+}
+.Footer .Footer-content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: #385f87;
+}
+.Footer .content a, .Footer .Footer-content p {
+  color: #F5F7FA;
+  text-decoration: none;
+}
+.Footer .Footer-content b {
+  color: white;
+}
+.Footer .Footer-content p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.Footer .Footer-content a {
+  color:#F5F7FA;
+  text-decoration:none;
+}
+.Footer .Footer-content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer .Footer-content > div > div {
+  margin: 0.25rem 0;
+}
+.Footer .Footer-content > div > div > * {
+  margin-right: 0.5rem;
+}
+.Footer .Footer-content > div .image {
+  align-self: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  background-size: cover;
+  background-position: center;
+}

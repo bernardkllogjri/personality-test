@@ -1,0 +1,128 @@
+.Radios {
+  display: flex;
+  justify-content: space-between;
+  min-width: 1300px;
+  padding: 85px 50px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 8px 10px 0px #d8dfeb;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.Radios .Radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.Radios .Radio {
+  cursor: pointer;
+  width: 100%;
+  margin: 10px;
+}
+
+.Radios .Radio .Radio-content {
+  display: flex;
+  padding: 30px 45px;
+  box-sizing: border-box;
+  border: 2px solid #e1e2e7;
+  border-radius: 10px;
+  transition: box-shadow 0.4s;
+  position: relative;
+}
+
+.Radio-container .Radio-title {
+  font-size: 16px;
+  font-weight: 500;
+  flex-basis: 100%;
+  color: #252f42;
+  margin-bottom: 20px;
+}
+
+.Radios .Radio .Radio-details p {
+  color: #646a79;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.Radios .Radio .Radio-content:hover {
+  box-shadow: 0px 3px 5px 0px #e8e8e8;
+}
+
+.Radios .Radio input[type="radio"]:checked + .Radio-content:after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: #385f87;
+  left: 20px;
+  top: 32px;
+  border-radius: 100%;
+  border: 3px solid #fff;
+  box-shadow: 0px 0px 0px 2px #385f87;
+}
+
+.Radios .Radio input[type="radio"]:checked + .Radio-content {
+  border: 2px solid #385f87;
+  background: #eaf1fe;
+  transition: ease-in 0.3s;
+}
+
+@media screen and (max-width: 991px) {
+  .Radios {
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+  }
+
+  .Radios .Radio {
+    width: 100%;
+  }
+
+  .Radio.complete-radio {
+    margin-top: 20px;
+  }
+
+  .Radios .Radio .Radio-content .Radio-details {
+    width: 70%;
+    display: inline-block;
+  }
+
+  .Radios .Radio input[type="radio"]:checked + .Radio-content:after {
+    top: 45%;
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Radios .Radio .Radio-content .Radio-details {
+    width: 60%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .Radios .Radio .Radio-content img {
+    margin-bottom: 20px;
+    height: 56px;
+    transition: height 0.4s;
+  }
+
+  .Radios .Radio input[type="radio"]:checked + .Radio-content:after {
+    top: 20px;
+    right: 10px;
+  }
+
+  .Radios .Radio .Radio-content .Radio-details {
+    width: 100%;
+  }
+
+  .Radios .Radio .Radio-content {
+    padding: 24px;
+    flex-direction: column;
+    align-items: baseline;
+  }
+}

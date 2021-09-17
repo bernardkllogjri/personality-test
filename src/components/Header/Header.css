@@ -1,0 +1,55 @@
+
+.Header-container {
+  max-width: 60em;
+  min-width: 45em;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  top: 0;
+  z-index: 3;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  float: right;
+}
+nav li {
+  display: inline-block;
+  padding: 2em;
+  text-align: center;
+  transition: all 0.2s;
+}
+nav li:last-child {
+  padding-right: 0;
+}
+nav a {
+  color: #FFF;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+nav a:hover {
+  color: #DDD;
+}
+
+#icon {
+  display: inline-block;
+  padding-top: 0.7em;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#nav-bg {
+  background: #222;
+  position: fixed;
+  height: 5em;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}

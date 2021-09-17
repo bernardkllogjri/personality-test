@@ -1,0 +1,125 @@
+.steps {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  padding: 0 10px;
+  height: 50px;
+}
+
+.step:not(.step__active) {
+  flex: 1;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.step:not(:last-child) {
+  transition: all 400ms ease-out;
+}
+
+.step .step__circle::after {
+  content: " ";
+  height: 1px;
+  background-color: transparent;
+  opacity: 0.5;
+  border-top: 1px solid #385f87;
+  position: absolute;
+  right: 4px;
+  top: 6px;
+  left: 16px;
+}
+
+.step:last-child .step__circle::after {
+  right: 16px;
+  left: 4px;
+}
+
+.step:last-child.step__active .step__circle::after {
+  content: none;
+}
+
+.step:last-child.step__active .step__circle::before {
+  content: " ";
+  height: 1px;
+  background-color: #385f87;
+  opacity: 0.5;
+  border-top: none;
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  left: 4px;
+}
+
+.step__active {
+  flex: 6;
+}
+
+.step__circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #385f87;
+}
+
+.step:last-child .step__circle {
+  align-self: flex-end;
+}
+
+.step:not(.step__active):nth-last-child(2) {
+  flex: 0;
+}
+
+.step.step__active:nth-last-child(2) .step__circle::before {
+  right: -4px;
+}
+
+
+.step:nth-last-child(2) .step__text {
+  width: max-content;
+  position: absolute;
+  top: 12px;
+}
+
+.step:last-child .step__text {
+  text-align: right;
+}
+
+.step__text {
+  opacity: 0.5;
+  color: #385f87;
+
+  word-break: break-all;
+  margin-top: 0.25em;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.step__active .step__text {
+  color: #385f87;
+  text-transform: uppercase;
+  opacity: 1;
+  text-align: left;
+}
+
+.step__active .step__circle {
+  color: #385f87;
+  background-color: transparent;
+  border: 2px solid #385f87;
+  text-transform: uppercase;
+}
+
+.step__active ~ .step .step__circle {
+  background-color: #c1c8cd;
+}
+
+.step__active ~ .step .step__text {
+  color: #adb5bd;
+  opacity: 1;
+}
+
+.step__active .step__circle::after, .step__active ~ .step .step__circle::after {
+  border-top: 1px dotted #c1c8cd;
+}
