@@ -2,7 +2,7 @@
 import { Wizard, WizardStep } from '../../components';
 import { useReducer, useState } from 'react';
 import { reducer } from '../../reducer';
-import data from '../../mock';
+import { data, maxScore } from '../../mock';
 import { useHistory } from 'react-router-dom';
 import './Quiz.css';
 
@@ -34,7 +34,7 @@ function Quiz() {
     } else {
       const result = Object.keys(state).reduce((acc, key) => state[key].value + acc, 0)
 
-      history.push('/finish-quiz', { result: result < 28 ? 'introvert': 'extrovert' })
+      history.push('/finish-quiz', { result: result < maxScore/2 ? 'introvert': 'extrovert' })
     }
   }
   

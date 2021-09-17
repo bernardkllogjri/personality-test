@@ -149,4 +149,9 @@ const data : {
   },
 ]
 
-export default data
+const maxScore = data.reduce((acc, { alternatives }) =>  acc+ alternatives.reduce((acc, { score }) => acc + score,0),0)
+
+export {
+  maxScore,
+  data
+}
